@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html> 
+<html> 
+	<head> 
+	    <title>ModisenseDashboard</title> 
+	    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+        <link href="mobile.css" rel="stylesheet" type="text/css" />
+        <link href="../Content/blueprint/screen.css" rel="stylesheet" type="text/css" />
+        <link href="../Content/messages.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+    </head> 
+<body> 
+
+<!-- load Knockout script library -->
+<script type="text/javascript" 
+    src='../Scripts/knockout-2.0.0.js'>
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $.getJSON("../Service/ModisenseDashboardDataService.svc/GetVersion", function (allData) {
+            $("#moduleVersion").html("Module Assembly Version " + allData.d.GetVersion);
+        });
+
+    });
+</script>
+
+<!-- --------------------------------------
+  HOME PAGE
+  ------------------------------------- -->
+
+<div id="home" data-role="page" data-theme="b">
+	<div data-role="header">
+		<h1>ModisenseDashboard</h1>
+        <a href="#about" data-icon="info" class="ui-btn-right">About</a>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="b">	
+	    
+<div class="container span-7" id="hw_container">
+
+    <div class="mbWarning">INSTRUCTIONS: This demo page uses the Blueprint.css Framework to control the module output.
+    Change the First and Last name in the input boxes and as you exit each text field notice how the Greeting text below changes
+    automatically. This is accomplished by using Knockout.js two-way data binding. Clicking the button will popup an
+    alert box using the .save method on the Knockout.js viewModel defined in the ViewModel folder.</div>
+
+    <div class="column span-7 last">
+    
+        <div class="mbClear">
+        Enter a First Name <input type="text" data-bind="value: firstName" /><br />
+        Enter a Last Name <input type="text" data-bind="value: lastName" />
+        <button data-bind="click: save">Click me</button>
+        </div>
+    
+    </div>
+
+    <div class="column span-7">
+        <div class="mbClear">
+            <span data-bind="text: greet"></span>
+        </div>
+    </div>
+
+    <div class="column span-7"><div class="mbError">Error!</div></div>
+
+    <div class="column span-7"><div class="mbInfo">Info</div></div>
+
+    <div class="column span-7 last"><div class="mbSuccess">Congratulations!</div></div>
+
+</div>
+
+	</div><!-- /content -->
+
+</div>
+
+<!-- --------------------------------------
+  ABOUT PAGE
+  ------------------------------------- -->
+
+<div id="about" data-role="page" data-theme="b" data-add-back-btn="true">
+	<div data-role="header">
+		<h1>ModisenseDashboard</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="b">	
+	    
+        <div class="hw_about">
+
+            <h3>Hello World</h3>
+            (c) Copyright 2012 Gooddogs.com<br />
+            All Rights Reserved.<br /><br />
+            Change the text above, and this text to reflect whatever information you want to provide your Users
+            when they visit this 'About' page. You could also use this page to display Latest Development News
+            or Release Notes. I would also suggest displaying links to support resources for your module.
+          
+            <h3>Module Info</h3>
+            <div id="moduleVersion"></div>
+
+        </div>
+
+	</div><!-- /content -->
+
+</div>
+
+</body>
+</html>
+
+
+<!-- load the viewModel for this View -->
+<script type="text/javascript" src='../ViewModels/Demo.js'></script>

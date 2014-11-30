@@ -1,0 +1,77 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>ATC: ModisenseDashboard</name>
+      <friendlyname>ATC: ModisenseDashboard</friendlyname>
+      <foldername>ModisenseDashboard</foldername>
+      <modulename>ATC: ModisenseDashboard</modulename>
+      <description>ATC ModisenseDashboard module</description>
+      <version>01.00.00</version>
+      <license>
+       /*       ModissenseDashboard - Web client for Modissense
+        '       Copyright (C) 2013  ATC
+        '
+        '       This program is free software: you can redistribute it and/or modify
+        '       it under the terms of the GNU General Public License as published by
+        '       the Free Software Foundation, either version 3 of the License, or
+        '       (at your option) any later version.
+        '
+        '       This program is distributed in the hope that it will be useful,
+        '       but WITHOUT ANY WARRANTY; without even the implied warranty of
+        '      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        'GNU General Public License for more details.
+
+        'You should have received a copy of the GNU General Public License
+        'along with this program.  If not, see www.gnu.org/licenses.
+       */
+      </license>
+      <resourcefile>Resources.zip</resourcefile>
+      <businesscontrollerclass>FeatureController</businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>ModisenseDashboard</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <src>DesktopModules/ModisenseDashboard/Views/View.ascx</src>
+              <type>View</type>
+              <helpurl></helpurl>
+            </control>
+            <control>
+              <key>About</key>
+              <title>About this Module</title>
+              <src>DesktopModules/ModisenseDashboard/Views/About.ascx</src>
+              <type>Edit</type>
+              <helpurl></helpurl>
+            </control>
+            <control>
+              <key>Demo</key>
+              <title>Demonstration</title>
+              <src>DesktopModules/ModisenseDashboard/Views/Demo.ascx</src>
+              <type>Edit</type>
+              <helpurl></helpurl>
+            </control>
+            <control>
+              <key>Settings</key>
+              <title>ModisenseDashboard Settings</title>
+              <src>DesktopModules/ModisenseDashboard/Views/Settings.ascx</src>
+              <type>Edit</type>
+              <helpurl></helpurl>
+            </control>
+          </controls>
+        </module>
+      </modules>
+      <files>
+        <file>
+	     <name>Gooddogs.Modules.Dnn.ModisenseDashboard.dll</name>
+      	</file>
+        <file>
+          <name>Data/scripts/01.00.00.SqlDataProvider</name>
+        </file>
+        <file>
+          <name>Data/scripts/Uninstall.SqlDataProvider</name>
+        </file>
+      </files>
+    </folder>
+  </folders>
+</dotnetnuke>

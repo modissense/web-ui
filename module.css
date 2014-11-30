@@ -1,0 +1,227 @@
+﻿@import url("content/messages.css");
+@import url("content/bootstrap/css/bootstrap.css");
+@import url("content/bootstrap/css/datetimepicker.css");
+
+body
+{
+}
+
+#modissense{
+
+    position:relative;
+}
+
+#map_canvas
+{
+    height: 400px;
+    width: 700px;
+}
+
+#blogmap_canvas
+{
+    height: 220px;
+    width: 220px;
+}
+
+
+.connect
+{
+    width: 274px;
+    height: 40px;
+    display: block;
+    margin: 25px auto 5px auto;
+}
+
+.fb
+{
+    background: url(Content/images/facebook.png) no-repeat;
+}
+
+.tw
+{
+    background: url(Content/images/twitter.png) no-repeat;
+}
+
+.fq
+{
+    background: url(Content/images/foursquare.png) no-repeat;
+}
+
+
+.social_name
+{
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.social_connect
+{
+    margin-top: 10px;
+    font-size:16px;
+    position: relative;
+}
+
+.social_disconnect
+{
+    margin-top: 15px;
+    font-size:12px;
+    position: relative;
+}
+
+
+.network_connected
+{
+    width: 32px;
+    height: 32px;
+    left: -265px;
+    position: absolute;
+    background: url(Content/images/check.png) no-repeat;
+}
+
+.social_net
+{
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.facebook_icon
+{
+    background-image: url(Content/images/facebook_button_blue.png);
+}
+
+.twitter_icon
+{
+    background-image: url(Content/images/twitter_button_blue.png);
+}
+
+.foursquare_icon
+{
+    background-image: url(Content/images/foursquare_button_blue.png);
+}
+
+.poiDetails{
+
+    padding:10px;
+}
+
+.poiDetails .title{
+
+    color:#2BA6CB;
+    font-size:16px;
+    padding-bottom:10px;
+    width:250px;
+}
+
+.poiDetails .description
+{    
+    font-style:italic;
+    padding: 10px 0;
+}
+/* Skin overwriting*/
+
+h1, h2, h3, h4, h5, h6
+{
+    margin-top: 0px;
+}
+
+#modissense input
+{
+    margin-top: 0px;
+}
+
+
+.datetimepicker{
+    top: 418px;
+}
+
+.list-group {
+    max-width: 300px;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #428BCA;
+    border-color: #428BCA;
+    color: #FFFFFF;
+    z-index: 2;
+}
+.list-group-item:first-child,.list-group-blog:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+a.list-group-item {
+    color: #555555;
+}
+.list-group-item {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    display: block;
+    margin-bottom: -1px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+a.list-group-item:hover, a.list-group-item:focus {
+    background-color: #F5F5F5;
+    text-decoration: none;
+}
+
+.list-group-blog {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    margin-bottom: -1px;
+    padding: 10px 15px;
+    position: relative;
+    float:left;
+}
+
+
+
+/* bootstrap overwriting*/
+
+#modissense .well
+{
+    border-color: #CCCCCC;
+    -webkit-box-shadow: 0 3px 8px #999999;
+    box-shadow: 0 3px 8px #999999;
+    padding:10px 19px;
+}
+
+#modissense .nav
+{
+    margin-bottom: 0px;
+}
+
+.nopadtop{
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+#modissense button.close{
+
+    padding:5px 10px;
+}
+
+#modissense a.edit{
+    padding:5px 10px;
+}
+
+#modissense a.delete{
+    padding:5px 10px;
+    color:#f00;
+}
+
+
+#modissense .span9.white{
+    background-color:#ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 680px;
+}
+
+
+a.btn, a.btn:link, a.btn:visited, a.btn:active
+ {
+    color:#fff;
+}

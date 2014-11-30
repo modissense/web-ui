@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gooddogs.Modules.Dnn.ModisenseDashboard</name>
+    </assembly>
+    <members>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.FeatureController">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for ModisenseDashboard
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.FeatureController.ExportModule(System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ExportModule implements the IPortable ExportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be exported</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.FeatureController.ImportModule(System.Int32,System.String,System.String,System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ImportModule implements the IPortable ImportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be imported</param>
+            <param name="Content">The content to be imported</param>
+            <param name="Version">The version of the module to be imported</param>
+            <param name="UserId">The Id of the user performing the import</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.FeatureController.GetSearchItems(DotNetNuke.Entities.Modules.ModuleInfo)">
+            -----------------------------------------------------------------------------
+            <summary>
+            GetSearchItems implements the ISearchable Interface
+            </summary>
+            <param name="ModInfo">The ModuleInfo for the module to be Indexed</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.FeatureController.UpgradeModule(System.String)">
+            -----------------------------------------------------------------------------
+            <summary>
+            UpgradeModule implements the IUpgradeable Interface
+            </summary>
+            <param name="Version">The current version of the module</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.#ctor">
+            <summary>
+            Initializes a new ModisenseDashboardContainer object using the connection string found in the 'ModisenseDashboardContainer' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.#ctor(System.String)">
+            <summary>
+            Initialize a new ModisenseDashboardContainer object.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new ModisenseDashboardContainer object.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.AddToModisense_UserProfile(Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile)">
+            <summary>
+            Deprecated Method for adding a new object to the Modisense_UserProfile EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.AddToModisense_Socialgraph(Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph)">
+            <summary>
+            Deprecated Method for adding a new object to the Modisense_Socialgraph EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.AddToModisense_POI(Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI)">
+            <summary>
+            Deprecated Method for adding a new object to the Modisense_POI EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.AddToModisense_SocialNetwork(Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_SocialNetwork)">
+            <summary>
+            Deprecated Method for adding a new object to the Modisense_SocialNetwork EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.Modisense_UserProfile">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.Modisense_Socialgraph">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.Modisense_POI">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.ModisenseDashboardContainer.Modisense_SocialNetwork">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.CreateModisense_POI(System.Int32,System.Double,System.Double,System.String,System.String,System.String)">
+            <summary>
+            Create a new Modisense_POI object.
+            </summary>
+            <param name="id">Initial value of the Id property.</param>
+            <param name="latitude">Initial value of the Latitude property.</param>
+            <param name="longitude">Initial value of the Longitude property.</param>
+            <param name="name">Initial value of the Name property.</param>
+            <param name="category">Initial value of the Category property.</param>
+            <param name="other">Initial value of the Other property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.Id">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.Latitude">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.Longitude">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.Name">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.Category">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_POI.Other">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.CreateModisense_Socialgraph(System.Int32,System.String,System.String,System.DateTime,System.DateTime,System.String,System.String,System.Int32)">
+            <summary>
+            Create a new Modisense_Socialgraph object.
+            </summary>
+            <param name="id">Initial value of the Id property.</param>
+            <param name="latitude">Initial value of the Latitude property.</param>
+            <param name="longitude">Initial value of the Longitude property.</param>
+            <param name="startTime">Initial value of the StartTime property.</param>
+            <param name="endTime">Initial value of the EndTime property.</param>
+            <param name="task">Initial value of the Task property.</param>
+            <param name="taskCategory">Initial value of the TaskCategory property.</param>
+            <param name="modisense_UserProfileId">Initial value of the Modisense_UserProfileId property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Id">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Latitude">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Longitude">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.StartTime">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.EndTime">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Task">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.TaskCategory">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Modisense_UserProfileId">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Modisense_UserProfile">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_Socialgraph.Modisense_UserProfileReference">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_SocialNetwork">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_SocialNetwork.CreateModisense_SocialNetwork(System.Int32,System.String)">
+            <summary>
+            Create a new Modisense_SocialNetwork object.
+            </summary>
+            <param name="id">Initial value of the Id property.</param>
+            <param name="name">Initial value of the Name property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_SocialNetwork.Id">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_SocialNetwork.Name">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_SocialNetwork.Modisense_UserProfile">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile.CreateModisense_UserProfile(System.Int32,System.String)">
+            <summary>
+            Create a new Modisense_UserProfile object.
+            </summary>
+            <param name="id">Initial value of the Id property.</param>
+            <param name="nickname">Initial value of the Nickname property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile.Id">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile.Nickname">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile.Modisense_SocialNetwork">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.ModisenseDashboard.Data.Modisense_UserProfile.Modisense_Socialgraph">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Views.About.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Views.Demo">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewHelloWorld class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Views.Demo.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.Settings">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Settings class manages Module Settings
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Settings.LoadSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            LoadSettings loads the settings from the Database and displays them
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.Settings.UpdateSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            UpdateSettings saves the modified settings to the Database
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.ModisenseDashboard.View">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewHelloWorld class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.ModisenseDashboard.View.model">
+            <summary>
+            model control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.ModisenseDashboard.View.viewmodel">
+            <summary>
+            viewmodel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.ModisenseDashboard.View.datepicker">
+            <summary>
+            datepicker control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.ModisenseDashboard.View.bootstrap">
+            <summary>
+            bootstrap control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.ModisenseDashboard.View.moment">
+            <summary>
+            moment control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.ModisenseDashboard.View.logoutLink">
+            <summary>
+            logoutLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.ModisenseDashboard.View.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+    </members>
+</doc>

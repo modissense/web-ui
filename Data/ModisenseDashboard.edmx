@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModisenseDashboard.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModisenseDashboardStoreContainer">
+    <EntitySet Name="Modisense_UserProfile" EntityType="ModisenseDashboard.Store.Modisense_UserProfile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modisense_Socialgraph" EntityType="ModisenseDashboard.Store.Modisense_Socialgraph" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modisense_POI" EntityType="ModisenseDashboard.Store.Modisense_POI" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modisense_SocialNetwork" EntityType="ModisenseDashboard.Store.Modisense_SocialNetwork" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Modisense_UserProfileModisense_SocialNetwork" EntityType="ModisenseDashboard.Store.Modisense_UserProfileModisense_SocialNetwork" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Modisense_UserProfileModisense_SocialNetwork_Modisense_UserProfile" Association="ModisenseDashboard.Store.FK_Modisense_UserProfileModisense_SocialNetwork_Modisense_UserProfile">
+      <End Role="Modisense_UserProfile" EntitySet="Modisense_UserProfile" />
+      <End Role="Modisense_UserProfileModisense_SocialNetwork" EntitySet="Modisense_UserProfileModisense_SocialNetwork" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modisense_UserProfileModisense_SocialNetwork_Modisense_SocialNetwork" Association="ModisenseDashboard.Store.FK_Modisense_UserProfileModisense_SocialNetwork_Modisense_SocialNetwork">
+      <End Role="Modisense_SocialNetwork" EntitySet="Modisense_SocialNetwork" />
+      <End Role="Modisense_UserProfileModisense_SocialNetwork" EntitySet="Modisense_UserProfileModisense_SocialNetwork" />
+    </AssociationSet>
+    <AssociationSet Name="Modisense_UserProfileModisense_Socialgraph" Association="ModisenseDashboard.Store.Modisense_UserProfileModisense_Socialgraph">
+      <End Role="Modisense_UserProfile" EntitySet="Modisense_UserProfile" />
+      <End Role="Modisense_Socialgraph" EntitySet="Modisense_Socialgraph" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Modisense_UserProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nickname" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modisense_Socialgraph">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Latitude" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Longitude" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="Task" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaskCategory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modisense_UserProfileId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modisense_POI">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Other" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modisense_SocialNetwork">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modisense_UserProfileModisense_SocialNetwork">
+    <Key>
+      <PropertyRef Name="Modisense_UserProfile_Id" />
+      <PropertyRef Name="Modisense_SocialNetwork_Id" />
+    </Key>
+    <Property Name="Modisense_UserProfile_Id" Type="int" Nullable="false" />
+    <Property Name="Modisense_SocialNetwork_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Modisense_UserProfileModisense_Socialgraph">
+    <End Role="Modisense_UserProfile" Type="ModisenseDashboard.Store.Modisense_UserProfile" Multiplicity="1" />
+    <End Role="Modisense_Socialgraph" Type="ModisenseDashboard.Store.Modisense_Socialgraph" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modisense_UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Modisense_Socialgraph">
+        <PropertyRef Name="Modisense_UserProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modisense_UserProfileModisense_SocialNetwork_Modisense_UserProfile">
+    <End Role="Modisense_UserProfile" Type="ModisenseDashboard.Store.Modisense_UserProfile" Multiplicity="1" />
+    <End Role="Modisense_UserProfileModisense_SocialNetwork" Type="ModisenseDashboard.Store.Modisense_UserProfileModisense_SocialNetwork" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modisense_UserProfile">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Modisense_UserProfileModisense_SocialNetwork">
+        <PropertyRef Name="Modisense_UserProfile_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modisense_UserProfileModisense_SocialNetwork_Modisense_SocialNetwork">
+    <End Role="Modisense_UserProfileModisense_SocialNetwork" Type="ModisenseDashboard.Store.Modisense_UserProfileModisense_SocialNetwork" Multiplicity="*" />
+    <End Role="Modisense_SocialNetwork" Type="ModisenseDashboard.Store.Modisense_SocialNetwork" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Modisense_SocialNetwork">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Modisense_UserProfileModisense_SocialNetwork">
+        <PropertyRef Name="Modisense_SocialNetwork_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModisenseDashboard" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ModisenseDashboardContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Modisense_UserProfile" EntityType="ModisenseDashboard.Modisense_UserProfile" />
+          <EntitySet Name="Modisense_Socialgraph" EntityType="ModisenseDashboard.Modisense_Socialgraph" />
+          <EntitySet Name="Modisense_POI" EntityType="ModisenseDashboard.Modisense_POI" />
+          <EntitySet Name="Modisense_SocialNetwork" EntityType="ModisenseDashboard.Modisense_SocialNetwork" />
+          <AssociationSet Name="Modisense_UserProfileModisense_SocialNetwork" Association="ModisenseDashboard.Modisense_UserProfileModisense_SocialNetwork">
+            <End Role="Modisense_UserProfile" EntitySet="Modisense_UserProfile" />
+            <End Role="Modisense_SocialNetwork" EntitySet="Modisense_SocialNetwork" />
+          </AssociationSet>
+          <AssociationSet Name="Modisense_UserProfileModisense_Socialgraph" Association="ModisenseDashboard.Modisense_UserProfileModisense_Socialgraph">
+            <End Role="Modisense_UserProfile" EntitySet="Modisense_UserProfile" />
+            <End Role="Modisense_Socialgraph" EntitySet="Modisense_Socialgraph" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Modisense_UserProfile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nickname" Nullable="false" />
+          <NavigationProperty Name="Modisense_SocialNetwork" Relationship="ModisenseDashboard.Modisense_UserProfileModisense_SocialNetwork" FromRole="Modisense_UserProfile" ToRole="Modisense_SocialNetwork" />
+          <NavigationProperty Name="Modisense_Socialgraph" Relationship="ModisenseDashboard.Modisense_UserProfileModisense_Socialgraph" FromRole="Modisense_UserProfile" ToRole="Modisense_Socialgraph" />
+        </EntityType>
+        <EntityType Name="Modisense_Socialgraph">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Latitude" Nullable="false" />
+          <Property Type="String" Name="Longitude" Nullable="false" />
+          <Property Type="DateTime" Name="StartTime" Nullable="false" />
+          <Property Type="DateTime" Name="EndTime" Nullable="false" />
+          <Property Type="String" Name="Task" Nullable="false" />
+          <Property Type="String" Name="TaskCategory" Nullable="false" />
+          <NavigationProperty Name="Modisense_UserProfile" Relationship="ModisenseDashboard.Modisense_UserProfileModisense_Socialgraph" FromRole="Modisense_Socialgraph" ToRole="Modisense_UserProfile" />
+          <Property Type="Int32" Name="Modisense_UserProfileId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modisense_POI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Category" Nullable="false" />
+          <Property Type="String" Name="Other" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modisense_SocialNetwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Modisense_UserProfile" Relationship="ModisenseDashboard.Modisense_UserProfileModisense_SocialNetwork" FromRole="Modisense_SocialNetwork" ToRole="Modisense_UserProfile" />
+        </EntityType>
+        <Association Name="Modisense_UserProfileModisense_SocialNetwork">
+          <End Type="ModisenseDashboard.Modisense_UserProfile" Role="Modisense_UserProfile" Multiplicity="*" />
+          <End Type="ModisenseDashboard.Modisense_SocialNetwork" Role="Modisense_SocialNetwork" Multiplicity="*" />
+        </Association>
+        <Association Name="Modisense_UserProfileModisense_Socialgraph">
+          <End Type="ModisenseDashboard.Modisense_UserProfile" Role="Modisense_UserProfile" Multiplicity="1" />
+          <End Type="ModisenseDashboard.Modisense_Socialgraph" Role="Modisense_Socialgraph" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modisense_UserProfile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Modisense_Socialgraph">
+              <PropertyRef Name="Modisense_UserProfileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModisenseDashboardStoreContainer" CdmEntityContainer="ModisenseDashboardContainer">
+    <EntitySetMapping Name="Modisense_UserProfile">
+      <EntityTypeMapping TypeName="IsTypeOf(ModisenseDashboard.Modisense_UserProfile)">
+        <MappingFragment StoreEntitySet="Modisense_UserProfile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nickname" ColumnName="Nickname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modisense_Socialgraph">
+      <EntityTypeMapping TypeName="IsTypeOf(ModisenseDashboard.Modisense_Socialgraph)">
+        <MappingFragment StoreEntitySet="Modisense_Socialgraph">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Task" ColumnName="Task" />
+          <ScalarProperty Name="TaskCategory" ColumnName="TaskCategory" />
+          <ScalarProperty Name="Modisense_UserProfileId" ColumnName="Modisense_UserProfileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modisense_POI">
+      <EntityTypeMapping TypeName="IsTypeOf(ModisenseDashboard.Modisense_POI)">
+        <MappingFragment StoreEntitySet="Modisense_POI">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modisense_SocialNetwork">
+      <EntityTypeMapping TypeName="IsTypeOf(ModisenseDashboard.Modisense_SocialNetwork)">
+        <MappingFragment StoreEntitySet="Modisense_SocialNetwork">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Modisense_UserProfileModisense_SocialNetwork" TypeName="ModisenseDashboard.Modisense_UserProfileModisense_SocialNetwork" StoreEntitySet="Modisense_UserProfileModisense_SocialNetwork">
+      <EndProperty Name="Modisense_UserProfile">
+        <ScalarProperty Name="Id" ColumnName="Modisense_UserProfile_Id" />
+      </EndProperty>
+      <EndProperty Name="Modisense_SocialNetwork">
+        <ScalarProperty Name="Id" ColumnName="Modisense_SocialNetwork_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="ModisenseDashboard" >
+        <EntityTypeShape EntityType="ModisenseDashboard.Modisense_UserProfile" Width="2.625" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="ModisenseDashboard.Modisense_Socialgraph" Width="1.5" PointX="3" PointY="3.25" />
+        <EntityTypeShape EntityType="ModisenseDashboard.Modisense_POI" Width="1.5" PointX="6.625" PointY="1.25" />
+        <EntityTypeShape EntityType="ModisenseDashboard.Modisense_SocialNetwork" Width="2.625" PointX="3.75" PointY="0.625" />
+        <AssociationConnector Association="ModisenseDashboard.Modisense_UserProfileModisense_SocialNetwork" />
+        <AssociationConnector Association="ModisenseDashboard.Modisense_UserProfileModisense_Socialgraph" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

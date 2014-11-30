@@ -1,0 +1,6 @@
+C:\inetpub\wwwroot\DNN705\bin\Gooddogs.Modules.Dnn.ModisenseDashboard.dll
+C:\inetpub\wwwroot\DNN705\bin\Gooddogs.Modules.Dnn.ModisenseDashboard.pdb
+C:\inetpub\wwwroot\DNN705\bin\ModisenseDashboard.xml
+C:\inetpub\wwwroot\DNN705\DesktopModules\ModisenseDashboard\obj\Debug\Gooddogs.Modules.Dnn.ModisenseDashboard.dll
+C:\inetpub\wwwroot\DNN705\DesktopModules\ModisenseDashboard\obj\Debug\Gooddogs.Modules.Dnn.ModisenseDashboard.pdb
+C:\inetpub\wwwroot\DNN705\DesktopModules\ModisenseDashboard\obj\Debug\ModisenseDashboard.csprojResolveAssemblyReference.cache
